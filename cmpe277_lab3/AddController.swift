@@ -96,8 +96,16 @@ class AddController: UIViewController,KeyboardDelegate {
     //function to display the next question on the screen, quesNumber and set the expected Ans in model
     func prepareNextQuestion(){
         
+        //generated number should be single digit
         n1 = generateRandomNumber()
+        while(n1 >= 10) {
+            n1 = generateRandomNumber()
+        }
+        
         n2 = generateRandomNumber()
+        while(n2 >= 10 || n2 > n1) {
+            n2 = generateRandomNumber()
+        }
         
         answer.text=""
             
@@ -160,6 +168,19 @@ class AddController: UIViewController,KeyboardDelegate {
         NSLog(character)
         if(character == "ENTER"){
             NSLog("Enter is pressed")
+            ans = answer.text!
+            
+            if (Int(ans) != n1 + n2) {
+                if(qNumber < 10) {
+                    prepareNextQuestion()
+                } else {
+                    timer.invalidate()
+                    showResultAlertDialog()
+                }
+            } else {
+                //if correct answer came in field, it was handled by text field listener
+            }
+            
         } else {
             NSLog("Number key is pressed")
             answer.insertText(character)
