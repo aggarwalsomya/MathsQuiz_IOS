@@ -16,6 +16,8 @@
 		49B5E2F41E03CB9A0042379D /* AddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5E2F31E03CB9A0042379D /* AddController.swift */; };
 		49B5E2F61E03D75D0042379D /* SubController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5E2F51E03D75D0042379D /* SubController.swift */; };
 		49B5E2F81E03D7760042379D /* MulController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5E2F71E03D7760042379D /* MulController.swift */; };
+		49B5E2FB1E0472280042379D /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5E2F91E0472280042379D /* Keyboard.swift */; };
+		49B5E2FC1E0472280042379D /* Keyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B5E2FA1E0472280042379D /* Keyboard.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		49B5E2F31E03CB9A0042379D /* AddController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddController.swift; sourceTree = "<group>"; };
 		49B5E2F51E03D75D0042379D /* SubController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubController.swift; sourceTree = "<group>"; };
 		49B5E2F71E03D7760042379D /* MulController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulController.swift; sourceTree = "<group>"; };
+		49B5E2F91E0472280042379D /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		49B5E2FA1E0472280042379D /* Keyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Keyboard.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 		49B5E2D21E03CB030042379D /* cmpe277_lab3 */ = {
 			isa = PBXGroup;
 			children = (
+				49B5E2F91E0472280042379D /* Keyboard.swift */,
+				49B5E2FA1E0472280042379D /* Keyboard.xib */,
 				49B5E2D31E03CB030042379D /* AppDelegate.swift */,
 				49B5E2D51E03CB030042379D /* ViewController.swift */,
 				49B5E2D71E03CB030042379D /* Main.storyboard */,
@@ -190,6 +196,7 @@
 			files = (
 				49B5E2DE1E03CB030042379D /* LaunchScreen.storyboard in Resources */,
 				49B5E2DB1E03CB030042379D /* Assets.xcassets in Resources */,
+				49B5E2FC1E0472280042379D /* Keyboard.xib in Resources */,
 				49B5E2D91E03CB030042379D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +219,7 @@
 				49B5E2F41E03CB9A0042379D /* AddController.swift in Sources */,
 				49B5E2D61E03CB030042379D /* ViewController.swift in Sources */,
 				49B5E2F81E03D7760042379D /* MulController.swift in Sources */,
+				49B5E2FB1E0472280042379D /* Keyboard.swift in Sources */,
 				49B5E2D41E03CB030042379D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

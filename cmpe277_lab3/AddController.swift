@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddController: UIViewController {
+class AddController: UIViewController,KeyboardDelegate {
     var result = 0
     var n1 = 0
     var n2 = 0
@@ -29,6 +29,7 @@ class AddController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareNextQuestion()
+        initKeyboard()
     }
     
     override func didReceiveMemoryWarning() {
@@ -148,5 +149,22 @@ class AddController: UIViewController {
         }
     }
 
+    func initKeyboard() {
+        let keyboardView = Keyboard(frame: CGRect(x: 0, y: 0, width: 0, height: 300))
+        keyboardView.delegate = self
+        answer.inputView = keyboardView
+        answer.becomeFirstResponder()
+    }
+    
+    func keyWasTapped(character: String) {
+        NSLog(character)
+        if(character == "ENTER"){
+            NSLog("Enter is pressed")
+        } else {
+            NSLog("Number key is pressed")
+            answer.insertText(character)
+        }
+    }
+    
 }
 
