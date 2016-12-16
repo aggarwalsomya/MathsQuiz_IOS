@@ -40,7 +40,15 @@ class AddController: UIViewController,KeyboardDelegate {
     @IBAction func ansChanged(_ sender: UITextField) {
         NSLog("Value Change method called for text field")
         ans = answer.text!
+        let myString: String = ans
+        var myMutableString = NSMutableAttributedString()
+        myMutableString = NSMutableAttributedString(string: myString as
+            String, attributes: [NSFontAttributeName:UIFont(name: "Helvetica", size: 18.0)!])
+        
+        
         if (Int(ans) == n1 + n2) {
+            myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.green, range: NSRange(location:0,length:ans.characters.count))
+            answer.attributedText = myMutableString
             NSLog("Correct answer came in text field")
             result = result + 1
             if(qNumber < 10) {
@@ -50,6 +58,8 @@ class AddController: UIViewController,KeyboardDelegate {
                 showResultAlertDialog()
             }
         } else {
+            myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSRange(location:0,length:ans.characters.count))
+            answer.attributedText = myMutableString
             NSLog("Waiting for correct answer");
         }
     }

@@ -141,11 +141,17 @@ class SubController: UIViewController ,KeyboardDelegate{
     
     func keyWasTapped(character: String) {
         NSLog(character)
+        let myString: String = answer.text!
+        var myMutableString = NSMutableAttributedString()
+        myMutableString = NSMutableAttributedString(string: myString as
+            String, attributes: [NSFontAttributeName:UIFont(name: "Helvetica", size: 18.0)!])
         if(character == "ENTER"){
             NSLog("Enter is pressed")
             ans = answer.text!
             
             if (Int(ans) != n1 - n2) {
+                myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.green, range: NSRange(location:0,length:ans.characters.count))
+                answer.attributedText = myMutableString
                 if(qNumber < 10) {
                     prepareNextQuestion()
                 } else {
@@ -157,8 +163,10 @@ class SubController: UIViewController ,KeyboardDelegate{
             }
             
         } else {
+            myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.green, range: NSRange(location:0,length:ans.characters.count))
+            answer.attributedText = myMutableString
             NSLog("Number key is pressed")
-            answer.insertText(character)
+//            answer.insertText(character)
         }
     }
     
