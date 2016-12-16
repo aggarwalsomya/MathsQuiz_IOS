@@ -13,6 +13,9 @@
 		49B5E2DB1E03CB030042379D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B5E2DA1E03CB030042379D /* Assets.xcassets */; };
 		49B5E2DE1E03CB030042379D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B5E2DC1E03CB030042379D /* LaunchScreen.storyboard */; };
 		49B5E2E91E03CB030042379D /* cmpe277_lab3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5E2E81E03CB030042379D /* cmpe277_lab3Tests.swift */; };
+		49B5E2F41E03CB9A0042379D /* AddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5E2F31E03CB9A0042379D /* AddController.swift */; };
+		49B5E2F61E03D75D0042379D /* SubController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5E2F51E03D75D0042379D /* SubController.swift */; };
+		49B5E2F81E03D7760042379D /* MulController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5E2F71E03D7760042379D /* MulController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		49B5E2E41E03CB030042379D /* cmpe277_lab3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cmpe277_lab3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B5E2E81E03CB030042379D /* cmpe277_lab3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cmpe277_lab3Tests.swift; sourceTree = "<group>"; };
 		49B5E2EA1E03CB030042379D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49B5E2F31E03CB9A0042379D /* AddController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddController.swift; sourceTree = "<group>"; };
+		49B5E2F51E03D75D0042379D /* SubController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubController.swift; sourceTree = "<group>"; };
+		49B5E2F71E03D7760042379D /* MulController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,9 @@
 				49B5E2D31E03CB030042379D /* AppDelegate.swift */,
 				49B5E2D51E03CB030042379D /* ViewController.swift */,
 				49B5E2D71E03CB030042379D /* Main.storyboard */,
+				49B5E2F51E03D75D0042379D /* SubController.swift */,
+				49B5E2F71E03D7760042379D /* MulController.swift */,
+				49B5E2F31E03CB9A0042379D /* AddController.swift */,
 				49B5E2DA1E03CB030042379D /* Assets.xcassets */,
 				49B5E2DC1E03CB030042379D /* LaunchScreen.storyboard */,
 				49B5E2DF1E03CB030042379D /* Info.plist */,
@@ -199,7 +208,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B5E2F61E03D75D0042379D /* SubController.swift in Sources */,
+				49B5E2F41E03CB9A0042379D /* AddController.swift in Sources */,
 				49B5E2D61E03CB030042379D /* ViewController.swift in Sources */,
+				49B5E2F81E03D7760042379D /* MulController.swift in Sources */,
 				49B5E2D41E03CB030042379D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
