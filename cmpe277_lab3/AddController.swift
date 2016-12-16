@@ -25,6 +25,16 @@ class AddController: UIViewController {
     var counter = 5
     var timer = Timer()
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        prepareNextQuestion()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     //function called on action : editing changed
     @IBAction func ansChanged(_ sender: UITextField) {
         NSLog("Value Change method called for text field")
@@ -35,6 +45,7 @@ class AddController: UIViewController {
             if(qNumber < 10) {
                 prepareNextQuestion()
             } else {
+                timer.invalidate()
                 showResultAlertDialog()
             }
         } else {
@@ -46,15 +57,6 @@ class AddController: UIViewController {
     //action handler when back button is pressed from the navigation bar
     @IBAction func backPrompt(_ sender: UIBarButtonItem) {
         showQuitAlertDialog()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        prepareNextQuestion()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     //dummy function to check the functionality of the result button
@@ -80,7 +82,7 @@ class AddController: UIViewController {
         talert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action: UIAlertAction!) in
             _ = self.navigationController?.popViewController(animated: true)
         }))
-        present(talert, animated: true, completion: nil)
+        self.present(talert, animated: true, completion: nil)
     }
     
     //function to generate the random numbers between 0-9
@@ -95,9 +97,6 @@ class AddController: UIViewController {
         
         n1 = generateRandomNumber()
         n2 = generateRandomNumber()
-            
-        counter = 5
-        timeRem.text = String(counter)
         
         answer.text=""
             
@@ -115,7 +114,10 @@ class AddController: UIViewController {
         qNumber = qNumber + 1
         quesNumber.text = String(qNumber)
         
-        //startTimer()
+        timer.invalidate()
+        counter = 5
+        timeRem.text = String(counter)
+        startTimer()
     }
     
     //func to return the result based on the numbers and operation
@@ -140,6 +142,7 @@ class AddController: UIViewController {
             if(qNumber < 10) {
                 prepareNextQuestion()
             } else {
+                counter = 0
                 showResultAlertDialog()
             }
         }
