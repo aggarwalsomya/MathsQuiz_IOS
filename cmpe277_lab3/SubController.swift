@@ -145,7 +145,7 @@ class SubController: UIViewController ,KeyboardDelegate{
             NSLog("Enter is pressed")
             ans = answer.text!
             
-            if (Int(ans) != n1 + n2) {
+            if (Int(ans) != n1 - n2) {
                 if(qNumber < 10) {
                     prepareNextQuestion()
                 } else {
@@ -166,7 +166,7 @@ class SubController: UIViewController ,KeyboardDelegate{
     @IBAction func ansChanged(_ sender: UITextField) {
         NSLog("Value Change method called for text field")
         ans = answer.text!
-        if (Int(ans) == n1 + n2) {
+        if (Int(ans) == n1 - n2) {
             NSLog("Correct answer came in text field")
             result = result + 1
             if(qNumber < 10) {
@@ -179,6 +179,7 @@ class SubController: UIViewController ,KeyboardDelegate{
             NSLog("Waiting for correct answer");
         }
     }
+    
     
 }
 

@@ -187,5 +187,17 @@ class AddController: UIViewController,KeyboardDelegate {
         }
     }
     
+    func showCorrectAnswerAlert() {
+        // the alert view
+        let alert = UIAlertController(title: "", message: "Correct!", preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        
+        // change to desired number of seconds (in this case 1 seconds)
+        let when = DispatchTime.now() + 0.1
+        DispatchQueue.main.asyncAfter(deadline: when){
+            // your code with delay
+            alert.dismiss(animated: true, completion: nil)
+        }
+    }
 }
 
