@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -324,10 +325,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVR-1o-zeQ">
-                                <rect key="frame" x="88" y="250" width="175" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVR-1o-zeQ">
+                                <rect key="frame" x="111" y="324" width="175" height="31"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oVR-1o-zeQ" secondAttribute="height" multiplier="175:31" id="sID-mj-mHo"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Subtraction">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -336,10 +339,12 @@
                                     <segue destination="5vG-eA-ntJ" kind="show" identifier="sub" id="bRi-Ig-X4s"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ke-cG-wj9">
-                                <rect key="frame" x="88" y="189" width="175" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ke-cG-wj9">
+                                <rect key="frame" x="111" y="263" width="175" height="33"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0Ke-cG-wj9" secondAttribute="height" multiplier="175:33" id="FPY-Zx-v9e"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Addition ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -348,10 +353,12 @@
                                     <segue destination="ihV-O2-pTf" kind="show" identifier="add" id="fdV-Xe-WVV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csb-MY-sZb">
-                                <rect key="frame" x="88" y="311" width="175" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csb-MY-sZb">
+                                <rect key="frame" x="111" y="385" width="175" height="33"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="csb-MY-sZb" secondAttribute="height" multiplier="175:33" id="eUP-Yi-K6V"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Multiplication">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -360,15 +367,32 @@
                                     <segue destination="hyL-Pg-DHC" kind="show" identifier="mul" id="2FR-7V-Ocb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Math Quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nar-qc-Imm">
-                                <rect key="frame" x="75" y="103" width="224" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dmr-dK-n5r">
+                                <rect key="frame" x="87.5" y="181" width="203.5" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Math Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nar-qc-Imm">
+                                        <rect key="frame" x="0.0" y="0.0" width="203.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dmr-dK-n5r" secondAttribute="height" multiplier="203:24" id="uDu-Sd-Bls"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dmr-dK-n5r" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-140.5" id="2H0-nq-3UM"/>
+                            <constraint firstItem="0Ke-cG-wj9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="11" id="OTn-Ln-vFW"/>
+                            <constraint firstItem="oVR-1o-zeQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="6" id="Thc-4C-sWR"/>
+                            <constraint firstItem="dmr-dK-n5r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1.5" id="U7Q-Mh-SoL"/>
+                            <constraint firstItem="oVR-1o-zeQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="11" id="ZIQ-eP-S8S"/>
+                            <constraint firstItem="csb-MY-sZb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="68" id="hg9-hT-zvm"/>
+                            <constraint firstItem="0Ke-cG-wj9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-54" id="sjp-rI-DAt"/>
+                            <constraint firstItem="csb-MY-sZb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="11" id="yQr-Sa-fOg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="D31-uQ-4rW"/>
                 </viewController>
