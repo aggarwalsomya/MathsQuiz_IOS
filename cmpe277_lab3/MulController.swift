@@ -198,11 +198,11 @@ class MulController: UIViewController, KeyboardDelegate {
         //position of label on screen
         var y_offset:CGFloat = 250.0;
         if UIDeviceOrientationIsLandscape(UIDevice.current.orientation) {
-            y_offset = 100.0;
+            y_offset = 150.0;
         }
         
         if UIDeviceOrientationIsPortrait(UIDevice.current.orientation) {
-            y_offset = 250.0;
+            y_offset = 30.0;
         }
         
         
@@ -230,11 +230,11 @@ class MulController: UIViewController, KeyboardDelegate {
         //position of label on screen
         var y_offset:CGFloat = 250.0;
         if UIDeviceOrientationIsLandscape(UIDevice.current.orientation) {
-            y_offset = 100.0;
+            y_offset = 150.0;
         }
         
         if UIDeviceOrientationIsPortrait(UIDevice.current.orientation) {
-            y_offset = 250.0;
+            y_offset = 30.0;
         }
         
         
