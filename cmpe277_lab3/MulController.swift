@@ -43,12 +43,17 @@ class MulController: UIViewController, KeyboardDelegate {
     }
     
     func showQuitAlertDialog() {
+        timer.invalidate();
+
         NSLog("Alert dialog button pressed")
         let talert = UIAlertController(title: "Quit", message: "Do you want to quit the quiz?", preferredStyle: UIAlertControllerStyle.alert)
         talert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {(action: UIAlertAction!) in
             _ = self.navigationController?.popViewController(animated: true)
         }))
-        talert.addAction(UIAlertAction(title: "No", style: .default, handler:nil))
+        talert.addAction(UIAlertAction(title: "No", style: .default, handler:{(action: UIAlertAction!)
+            in
+            self.startTimer()
+        }))
         present(talert, animated: true, completion: nil)
     }
     
