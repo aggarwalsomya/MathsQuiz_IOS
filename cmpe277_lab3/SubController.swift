@@ -195,7 +195,17 @@ class SubController: UIViewController ,KeyboardDelegate{
     func showCorrect(){
         
         //position of label on screen
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 120, y: self.view.frame.size.height/2 - 150, width:200, height: 35))
+        var y_offset:CGFloat = 250.0;
+        if UIDeviceOrientationIsLandscape(UIDevice.current.orientation) {
+            y_offset = 100.0;
+        }
+        
+        if UIDeviceOrientationIsPortrait(UIDevice.current.orientation) {
+            y_offset = 250.0;
+        }
+        
+        
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 120, y: self.view.frame.size.height/2 - y_offset, width:200, height: 35))
         
         //background color
         //toastLabel.backgroundColor = UIColor.green
@@ -217,7 +227,17 @@ class SubController: UIViewController ,KeyboardDelegate{
     
     func showError() {
         //position of label on screen
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 120, y: self.view.frame.size.height/2 - 150, width:200, height: 35))
+        var y_offset:CGFloat = 250.0;
+        if UIDeviceOrientationIsLandscape(UIDevice.current.orientation) {
+            y_offset = 100.0;
+        }
+        
+        if UIDeviceOrientationIsPortrait(UIDevice.current.orientation) {
+            y_offset = 250.0;
+        }
+        
+        
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 120, y: self.view.frame.size.height/2 - y_offset, width:200, height: 35))
         
         //background color
         //toastLabel.backgroundColor = UIColor.red
