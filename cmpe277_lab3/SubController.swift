@@ -44,7 +44,7 @@ class SubController: UIViewController ,KeyboardDelegate{
     
     func showQuitAlertDialog() {
         NSLog("Alert dialog button pressed")
-        let talert = UIAlertController(title: "Quit", message: "Are you sure you want to quit the quiz?", preferredStyle: UIAlertControllerStyle.alert)
+        let talert = UIAlertController(title: "Quit", message: "Do you want to quit the quiz?", preferredStyle: UIAlertControllerStyle.alert)
         talert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {(action: UIAlertAction!) in
             _ = self.navigationController?.popViewController(animated: true)
         }))
@@ -191,13 +191,13 @@ class SubController: UIViewController ,KeyboardDelegate{
     func showCorrect(){
         
         //position of label on screen
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 50, y: self.view.frame.size.height/2 - 250, width:200, height: 35))
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 120, y: self.view.frame.size.height/2 - 150, width:200, height: 35))
         
         //background color
         //toastLabel.backgroundColor = UIColor.green
         
         //text color
-        toastLabel.textColor = UIColor.green
+        toastLabel.textColor = UIColor.blue
         toastLabel.textAlignment = NSTextAlignment.center;
         self.view.addSubview(toastLabel)
         toastLabel.text = "Correct!"
@@ -213,7 +213,7 @@ class SubController: UIViewController ,KeyboardDelegate{
     
     func showError() {
         //position of label on screen
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 50, y: self.view.frame.size.height/2 - 250, width:200, height: 35))
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 120, y: self.view.frame.size.height/2 - 150, width:200, height: 35))
         
         //background color
         //toastLabel.backgroundColor = UIColor.red
