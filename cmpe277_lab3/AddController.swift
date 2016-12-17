@@ -150,6 +150,12 @@ class AddController: UIViewController,KeyboardDelegate {
         {
             timer.invalidate()
             counter = 5
+            if (answer.text?.isEmpty)! {
+                
+            } else {
+                showError()
+            }
+            
             if(qNumber < 10) {
                 prepareNextQuestion()
             } else {
