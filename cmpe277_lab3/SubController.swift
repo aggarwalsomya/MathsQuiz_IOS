@@ -164,6 +164,8 @@ class SubController: UIViewController ,KeyboardDelegate{
             
         } else {
             NSLog("Number key is pressed")
+            answer.insertText(character)
+
         }
     }
     
