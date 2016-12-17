@@ -170,7 +170,7 @@ class AddController: UIViewController,KeyboardDelegate {
     }
 
     func initKeyboard() {
-        let keyboardView = Keyboard(frame: CGRect(x:0, y: 0, width: 0, height: 180))
+        let keyboardView = Keyboard(frame: CGRect(x:100, y: -150, width: 0, height: 180))
         keyboardView.delegate = self
         answer.inputView = keyboardView
         answer.becomeFirstResponder()
@@ -205,11 +205,11 @@ class AddController: UIViewController,KeyboardDelegate {
         //position of label on screen
         var y_offset:CGFloat = 250.0;
         if UIDeviceOrientationIsLandscape(UIDevice.current.orientation) {
-            y_offset = 100.0;
+            y_offset = 150.0;
         }
         
         if UIDeviceOrientationIsPortrait(UIDevice.current.orientation) {
-            y_offset = 250.0;
+            y_offset = 30.0;
         }
         
         
@@ -237,11 +237,11 @@ class AddController: UIViewController,KeyboardDelegate {
         //position of label on screen
         var y_offset:CGFloat = 250.0;
         if UIDeviceOrientationIsLandscape(UIDevice.current.orientation) {
-            y_offset = 100.0;
+            y_offset = 150.0;
         }
         
         if UIDeviceOrientationIsPortrait(UIDevice.current.orientation) {
-            y_offset = 250.0;
+            y_offset = 30.0;
         }
 
         
