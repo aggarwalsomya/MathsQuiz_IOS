@@ -40,16 +40,10 @@ class AddController: UIViewController,KeyboardDelegate {
     @IBAction func ansChanged(_ sender: UITextField) {
         NSLog("Value Change method called for text field")
         ans = answer.text!
-        let myString: String = ans
-        var myMutableString = NSMutableAttributedString()
-        myMutableString = NSMutableAttributedString(string: myString as
-            String, attributes: [NSFontAttributeName:UIFont(name: "Helvetica", size: 18.0)!])
-        
         
         if (Int(ans) == n1 + n2) {
-            myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.green, range: NSRange(location:0,length:ans.characters.count))
-            answer.attributedText = myMutableString
             NSLog("Correct answer came in text field")
+            showCorrect()
             result = result + 1
             if(qNumber < 10) {
                 prepareNextQuestion()
@@ -58,8 +52,6 @@ class AddController: UIViewController,KeyboardDelegate {
                 showResultAlertDialog()
             }
         } else {
-            myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSRange(location:0,length:ans.characters.count))
-            answer.attributedText = myMutableString
             NSLog("Waiting for correct answer");
         }
     }
@@ -181,6 +173,7 @@ class AddController: UIViewController,KeyboardDelegate {
             ans = answer.text!
             
             if (Int(ans) != n1 + n2) {
+                showError()
                 if(qNumber < 10) {
                     prepareNextQuestion()
                 } else {
@@ -197,17 +190,51 @@ class AddController: UIViewController,KeyboardDelegate {
         }
     }
     
-    func showCorrectAnswerAlert() {
-        // the alert view
-        let alert = UIAlertController(title: "", message: "Correct!", preferredStyle: .alert)
-        self.present(alert, animated: true, completion: nil)
+    func showCorrect(){
         
-        // change to desired number of seconds (in this case 1 seconds)
-        let when = DispatchTime.now() + 0.1
-        DispatchQueue.main.asyncAfter(deadline: when){
-            // your code with delay
-            alert.dismiss(animated: true, completion: nil)
-        }
+        //position of label on screen
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 50, y: self.view.frame.size.height/2 - 250, width:200, height: 35))
+        
+        //background color
+        //toastLabel.backgroundColor = UIColor.green
+        
+        //text color
+        toastLabel.textColor = UIColor.green
+        toastLabel.textAlignment = NSTextAlignment.center;
+        self.view.addSubview(toastLabel)
+        toastLabel.text = "Correct!"
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        UIView.animate(withDuration: 0.5, delay: 0.1, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            
+            toastLabel.alpha = 0.0
+            
+        });
     }
+    
+    func showError() {
+        //position of label on screen
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 50, y: self.view.frame.size.height/2 - 250, width:200, height: 35))
+        
+        //background color
+        //toastLabel.backgroundColor = UIColor.red
+        
+        //text color
+        toastLabel.textColor = UIColor.red
+        toastLabel.textAlignment = NSTextAlignment.center;
+        self.view.addSubview(toastLabel)
+        toastLabel.text = "Incorrect!"
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        UIView.animate(withDuration: 0.5, delay: 0.1, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            
+            toastLabel.alpha = 0.0
+            
+        });
+    }
+    
+    
 }
 

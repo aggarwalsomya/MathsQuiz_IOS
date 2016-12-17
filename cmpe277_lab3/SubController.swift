@@ -141,17 +141,12 @@ class SubController: UIViewController ,KeyboardDelegate{
     
     func keyWasTapped(character: String) {
         NSLog(character)
-        let myString: String = answer.text!
-        var myMutableString = NSMutableAttributedString()
-        myMutableString = NSMutableAttributedString(string: myString as
-            String, attributes: [NSFontAttributeName:UIFont(name: "Helvetica", size: 18.0)!])
         if(character == "ENTER"){
             NSLog("Enter is pressed")
             ans = answer.text!
             
             if (Int(ans) != n1 - n2) {
-                myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.green, range: NSRange(location:0,length:ans.characters.count))
-                answer.attributedText = myMutableString
+                showError()
                 if(qNumber < 10) {
                     prepareNextQuestion()
                 } else {
@@ -163,10 +158,7 @@ class SubController: UIViewController ,KeyboardDelegate{
             }
             
         } else {
-            myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.green, range: NSRange(location:0,length:ans.characters.count))
-            answer.attributedText = myMutableString
             NSLog("Number key is pressed")
-//            answer.insertText(character)
         }
     }
     
@@ -175,6 +167,7 @@ class SubController: UIViewController ,KeyboardDelegate{
         NSLog("Value Change method called for text field")
         ans = answer.text!
         if (Int(ans) == n1 - n2) {
+            showCorrect()
             NSLog("Correct answer came in text field")
             result = result + 1
             if(qNumber < 10) {
@@ -188,6 +181,50 @@ class SubController: UIViewController ,KeyboardDelegate{
         }
     }
     
+    func showCorrect(){
+        
+        //position of label on screen
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 50, y: self.view.frame.size.height/2 - 250, width:200, height: 35))
+        
+        //background color
+        //toastLabel.backgroundColor = UIColor.green
+        
+        //text color
+        toastLabel.textColor = UIColor.green
+        toastLabel.textAlignment = NSTextAlignment.center;
+        self.view.addSubview(toastLabel)
+        toastLabel.text = "Correct!"
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        UIView.animate(withDuration: 0.5, delay: 0.1, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            
+            toastLabel.alpha = 0.0
+            
+        });
+    }
+    
+    func showError() {
+        //position of label on screen
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 50, y: self.view.frame.size.height/2 - 250, width:200, height: 35))
+        
+        //background color
+        //toastLabel.backgroundColor = UIColor.red
+        
+        //text color
+        toastLabel.textColor = UIColor.red
+        toastLabel.textAlignment = NSTextAlignment.center;
+        self.view.addSubview(toastLabel)
+        toastLabel.text = "Incorrect!"
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        UIView.animate(withDuration: 0.5, delay: 0.1, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            
+            toastLabel.alpha = 0.0
+            
+        });
+    }
     
 }
 
