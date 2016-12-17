@@ -138,7 +138,7 @@ class SubController: UIViewController ,KeyboardDelegate{
     }
     
     func initKeyboard() {
-        let keyboardView = Keyboard(frame: CGRect(x: 0, y: 0, width: 0, height: 300))
+        let keyboardView = Keyboard(frame: CGRect(x: 0, y: 0, width: 0, height: 180))
         keyboardView.delegate = self
         answer.inputView = keyboardView
         answer.becomeFirstResponder()
